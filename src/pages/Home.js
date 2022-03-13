@@ -6,7 +6,6 @@ import Dream from "../components/Dream";
 import Gallery from "../components/Gallery/Gallery";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import Restaurant from "../components/Restaurant";
 import MenuSideBar from "../components/SideBar/MenuSideBar";
 
 const Home = () => {

@@ -135,16 +135,16 @@ const ImageContainer = styled.div`
   }
 `;
 
-const BackgroundContainer = styled.div`
-  background-color: var(--background-color);
-  width: 150%;
-  height: 30rem;
-  transform: rotate(5deg);
-  align-self: flex-start;
-  margin: -20rem;
-  z-index: -1;
+// const BackgroundContainer = styled.div`
+//   background-color: var(--background-color);
+//   width: 150%;
+//   height: 30rem;
+//   transform: rotate(5deg);
+//   align-self: flex-start;
+//   margin: -20rem;
+//   z-index: -1;
 
-  @media (max-width: 768px) {
-    width: 200%;
-  }
-`;
+//   @media (max-width: 768px) {
+//     width: 200%;
+//   }
+// `;
