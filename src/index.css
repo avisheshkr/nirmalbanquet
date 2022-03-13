@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+/* font-family: 'Cookie', cursive; */
+/* #3B53A4
+#c12026 
+#F6F6F7
+*/
+
+:root {
+  --primary-color: #c12026;
+  --secondary-color: #3b53a4;
+  --text-color: #54595f;
+  --color: #8a8a8a;
+  --background-color: #f6f6f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "PT Serif", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 4.5rem;
+  font-weight: 400;
+  letter-spacing: 0.4rem;
+
+  color: var(--text-color);
+}
+
+h3 {
+  font-family: "Cookie", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  letter-spacing: 0.4rem;
+  line-height: 3rem;
+}
+
+h4 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+}
+
+p {
+  color: var(--color);
+  letter-spacing: 0.15rem;
+  line-height: 2.8rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-transform: capitalize;
+  padding: 1.5rem 3.5rem;
+  letter-spacing: 0.1rem;
+  border: none;
+  font-family: "PT Serif", sans-serif;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-0.2rem);
+}
+
+/* button:after {
+  content: "Read More";
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  background-color: var(--secondary-color);
+  padding: 1.5rem 3.5rem;
+  transition: all 0.3s ease;
+} */
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* MyComponent */
+
+/* .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem 0;
+  background: rgb(63, 63, 168);
+  position: relative;
+  z-index: 100;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+.mobileMenu {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.mobileMenu div {
+  height: 0.2rem;
+  width: 3rem;
+  background-color: #fff;
+}
+
+.responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 7rem;
+  flex-direction: column;
+  background-color: red;
+  width: 100%;
+}
+
+.animateMenu {
+  animation: menuDown 1s 1;
+}
+
+.animateMenuUp {
+  animation: menuUp 1s 1;
+}
+
+@keyframes menuDown {
+  0% {
+    transform: translateY(-600px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes menuUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50px);
+  }
+} */

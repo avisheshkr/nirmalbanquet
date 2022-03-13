@@ -1,0 +1,29 @@
+.menu-sidebar {
+  position: fixed;
+  top: 15vh;
+  left: 0;
+  bottom: 50%;
+  transition: 0.5s;
+  transform: translateX(-100%);
+  width: 14rem;
+  height: 20rem;
+  background-color: var(--primary-color);
+  z-index: 2000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.active-sidebar {
+  transform: translateX(0%);
+  transition: 0.5s;
+}
+
+@media (max-width: 500px) {
+  .menu-sidebar {
+    display: none;
+  }
+}
