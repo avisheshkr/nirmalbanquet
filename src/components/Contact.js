@@ -67,6 +67,7 @@ const Contact = () => {
                 margin: "20px 0",
                 backgroundColor: "green",
                 color: "#fff",
+                textAlign: "center",
               }}
             >
               Message sent successfully
