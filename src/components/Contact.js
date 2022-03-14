@@ -211,4 +211,14 @@ const ContactContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 500px) {
+    form {
+      padding: 0 1rem;
+    }
+
+    p {
+      padding: 3rem 1rem;
+    }
+  }
 `;

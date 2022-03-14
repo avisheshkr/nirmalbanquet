@@ -51,6 +51,10 @@ const AboutExtraContainer = styled.div`
       max-width: 100%;
     }
   }
+
+  @media (max-width: 500px) {
+    padding: 5rem 1rem;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -61,6 +65,10 @@ const TextContainer = styled.div`
   border-bottom: 0.3rem solid var(--primary-color);
   margin-left: 7rem;
   height: 38rem;
+
+  p {
+    text-align: justify;
+  }
 
   h4 {
     padding: 1.5rem 0;
@@ -80,9 +88,9 @@ const TextContainer = styled.div`
     border-radius: 50%;
   }
 
-  p {
-    text-align: right;
-  }
+  // p {
+  //   text-align: right;
+  // }
 
   @media (max-width: 1200px) {
     margin-left: 0;

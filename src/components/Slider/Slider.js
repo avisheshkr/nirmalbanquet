@@ -25,9 +25,19 @@ const Slider = () => {
     <>
       <SlideContainer>
         {data.map((item, index) => {
+          const { imageUrl, imageUrl1 } = item;
+
+          let src;
+
+          if (window.innerWidth > "1024") {
+            src = imageUrl;
+          } else if (window.innerWidth <= "1024") {
+            src = imageUrl1;
+          }
+
           return (
             <div key={index} style={{ transform: `translateX(${x}%)` }}>
-              <img src={item.imageUrl} alt="" />
+              <img src={src} alt="" />
             </div>
           );
         })}
@@ -58,11 +68,11 @@ const SlideContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto 2rem auto;
-  box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  background: transparent;
 
   div {
-    height: 100%;
+    height: auto;
     min-width: 100%;
     display: flex;
     justify-content: center;
@@ -72,10 +82,16 @@ const SlideContainer = styled.div`
 
     img {
       width: 100%;
-      height: 100%;
-
-      object-fit: cover;
+      height: auto;
     }
+  }
+
+  @media (min-width: 1920px) {
+    height: 80rem;
+  }
+
+  @media (max-width: 768px) {
+    height: 75rem;
   }
 `;
 

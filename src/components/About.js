@@ -19,13 +19,16 @@ const About = () => {
         <AboutContainer>
           <TextContainer>
             <h2>welcome</h2>
-            <h3>to Our Site</h3>
+            <h3>to Nirmal Banquet Site</h3>
             <p>
-              Belle Fleur’s mission is to deliver a heartfelt planning
-              experience so you have a heart filled wedding day.
+              We are located at Bhaktapur, Lokanthali-02. Nirmal Banquet is one
+              of the most renowned venues in the hospitality business and has
+              been witness to countless wedding ceremonies.
               <br />
-              <br /> You can count on us to be calm, loving, hands-on and, most
-              importantly, professional throughout your entire planning process.
+              <br /> We provide the best for hosting a large-sized gathering.
+              Nirmal Banquet boasts of well-equipped banquet halls that offer
+              the finest dining options and guarantees you perfection for every
+              event that you plan on hosting here.
             </p>
             <Link to="more" smooth={true} duration={1000}>
               <button>read more</button>
@@ -69,6 +72,14 @@ const MainContainer = styled.div`
   background-color: var(--background-color);
 
   margin-top: -12rem;
+
+  @media (min-width: 1920px) {
+    padding-top: 20rem;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 12rem;
+  }
 `;
 
 const AboutContainer = styled.div`
@@ -123,6 +134,10 @@ const TextContainer = styled.div`
       display: block;
     }
   }
+
+  @media (max-width: 500px) {
+    margin: 0 1rem;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -132,6 +147,10 @@ const ImageContainer = styled.div`
     margin: 0 auto;
     padding: 0 5rem;
     margin-top: 5rem;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0 1rem;
   }
 `;
 

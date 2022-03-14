@@ -52,6 +52,10 @@ const AboutExtraContainer = styled.div`
       max-width: 100%;
     }
   }
+
+  @media (max-width: 500px) {
+    padding: 5rem 1rem;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -64,6 +68,10 @@ const TextContainer = styled.div`
 
   h4 {
     padding: 1.5rem 0;
+  }
+
+  p {
+    text-align: justify;
   }
 
   div {
