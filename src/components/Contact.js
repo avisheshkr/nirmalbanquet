@@ -54,7 +54,7 @@ const Contact = () => {
   return (
     <>
       <MainContainer id="contacts">
-        <img src="images/parallax.png" alt="" />
+        <img src="images/rose.png" alt="" />
         <Heading letter="C" title="contact us" subTitle="connect" />
         <ContactContainer>
           <p>
@@ -112,7 +112,7 @@ const MainContainer = styled.div`
 
   img {
     position: absolute;
-    top: 20rem;
+    top: -5rem;
     left: 10rem;
     max-width: 60rem;
     z-index: -1000;
@@ -120,10 +120,15 @@ const MainContainer = styled.div`
     height: auto;
   }
 
+  @media (max-width: 1600px) {
+    img {
+      opacity: 0.3;
+    }
+  }
+
   @media (max-width: 1024px) {
     img {
-      opacity: 0.4;
-      max-width: 30rem;
+      // max-width: 30rem;
       left: 0;
     }
   }

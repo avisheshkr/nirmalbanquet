@@ -1,14 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
-const SingleImage = ({ showPhoto, viewPhoto, imgSrc }) => {
+const SingleImage = ({
+  showPhoto,
+  viewPhoto,
+  imgSrc,
+  getSrc,
+  setId,
+  id,
+  num,
+}) => {
   return (
     <SingleImageContainer showPhoto={showPhoto}>
       <div>
         <FaTimes onClick={viewPhoto} />
       </div>
+      <Prev
+        onClick={() => {
+          setId(id === 1 ? num : id - 1);
+          getSrc(id);
+        }}
+      >
+        <FaAngleLeft />
+      </Prev>
       <img src={imgSrc} alt="" />
+
+      <Next
+        onClick={() => {
+          setId(id === num ? 1 : id + 1);
+          getSrc(id);
+        }}
+      >
+        <FaAngleRight />
+      </Next>
     </SingleImageContainer>
   );
 };
@@ -38,12 +63,21 @@ const SingleImageContainer = styled.div`
     font-size: 3rem;
     color: #fff;
     cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 
   img {
     width: 100%;
     height: 90vh;
     object-fit: contain;
+    transition: 0.4s;
+
+    /* transform: ${(props) =>
+      props.animate ? "translateX(0%)" : "translateX(-100%)"};*/
   }
 
   @media (max-width: 500px) {
@@ -52,5 +86,39 @@ const SingleImageContainer = styled.div`
       top: 0.5rem;
       right: 0.5rem;
     }
+  }
+`;
+
+const Prev = styled.button`
+  background: transparent;
+  font-size: 5rem;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: 0.4s;
+  margin-left: 3rem;
+
+  &:hover {
+    background-color: transparent;
+    transform: scale(1.2);
+  }
+`;
+
+const Next = styled.button`
+  background: transparent;
+  font-size: 5rem;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  color: #fff;
+  margin-right: 3rem;
+
+  &:hover {
+    transform: scale(1.2);
+    background-color: transparent;
   }
 `;

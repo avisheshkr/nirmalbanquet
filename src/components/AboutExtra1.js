@@ -62,7 +62,7 @@ const TextContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  border-bottom: 0.3rem solid var(--primary-color);
+  border-bottom: 0.3rem solid var(--secondary-color);
   margin-right: 7rem;
   height: 38rem;
 

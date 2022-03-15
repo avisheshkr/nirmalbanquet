@@ -8,6 +8,14 @@ const Gallery = () => {
   const [data, setData] = useState(galleryData);
   const [showPhoto, setShowPhoto] = useState(false);
   const [imgSrc, setImgSrc] = useState("");
+  const [id, setId] = useState(null);
+
+  let num = data.length;
+
+  const getSrc = (id) => {
+    const newData = galleryData.filter((data) => data.id === id);
+    setImgSrc(newData[0].url);
+  };
 
   const viewPhoto = () => {
     setShowPhoto(!showPhoto);
@@ -21,7 +29,6 @@ const Gallery = () => {
     const updatedItems = galleryData.filter(
       (item) => curItem === item.category
     );
-    console.log(updatedItems);
     setData(updatedItems);
   };
 
@@ -39,6 +46,10 @@ const Gallery = () => {
           viewPhoto={viewPhoto}
           imgSrc={imgSrc}
           showPhoto={showPhoto}
+          id={id}
+          getSrc={getSrc}
+          setId={setId}
+          num={num}
         />
         <Column>
           {data.map((image, index) => {
@@ -49,6 +60,7 @@ const Gallery = () => {
                   alt=""
                   onClick={() => {
                     getImageSrc(image.url);
+                    setId(image.id + 1);
                     viewPhoto();
                   }}
                 />
@@ -56,27 +68,6 @@ const Gallery = () => {
             );
           })}
         </Column>
-
-        {/* <Column>
-          <img src="images/1.jpg" alt="" />
-
-          <img src="images/4.jpg" alt="" />
-        </Column>
-
-        <Column>
-          <img src="images/2.jpg" alt="" />
-          <img src="images/8.jpg" alt="" />
-        </Column>
-
-        <Column>
-          <img src="images/5.jpg" alt="" />
-          <img src="images/6.jpg" alt="" />
-        </Column>
-
-        <Column>
-          <img src="images/7.jpg" alt="" />
-          <img src="images/3.jpg" alt="" />
-        </Column> */}
       </ImageContainer>
     </>
   );

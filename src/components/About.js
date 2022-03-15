@@ -15,11 +15,11 @@ const About = () => {
             tagOuter="figure"
           ></Parallax>
         </ParallaxProvider> */}
-        <Image src="images/parallax.png" alt="" />
+        <Image src="images/rose.png" alt="" />
         <AboutContainer>
           <TextContainer>
-            <h2>welcome</h2>
-            <h3>to Nirmal Banquet Site</h3>
+            <h2>welcome to</h2>
+            <h3>Nirmal Banquet Site</h3>
             <p>
               We are located at Bhaktapur, Lokanthali-02. Nirmal Banquet is one
               of the most renowned venues in the hospitality business and has
@@ -35,7 +35,7 @@ const About = () => {
             </Link>
           </TextContainer>
           <ImageContainer>
-            <img src="images/couple.jpg" alt="" />
+            <img src="images/about.jpg" alt="" />
           </ImageContainer>
         </AboutContainer>
 
@@ -51,7 +51,7 @@ export default About;
 
 const Image = styled.img`
   position: absolute;
-  top: 10rem;
+  top: 0rem;
   right: 0rem;
   max-width: 60rem;
   z-index: 1;
@@ -60,6 +60,7 @@ const Image = styled.img`
   @media (max-width: 768px) {
     top: 50rem;
     right: 7rem;
+    opacity: 0.3;
   }
 `;
 
@@ -79,6 +80,18 @@ const MainContainer = styled.div`
 
   @media (max-width: 768px) {
     padding-top: 12rem;
+  }
+
+  @media (max-width: 500px) {
+    padding-top: 0rem;
+  }
+
+  @media (max-width: 400px) {
+    margin-top: -17rem;
+  }
+
+  @media (max-width: 350px) {
+    margin-top: -20rem;
   }
 `;
 
@@ -111,7 +124,7 @@ const AboutContainer = styled.div`
 
 const TextContainer = styled.div`
   flex: 1;
-  border-left: 0.3rem solid var(--primary-color);
+  border-left: 0.3rem solid var(--secondary-color);
   padding: 0 5rem;
 
   p {

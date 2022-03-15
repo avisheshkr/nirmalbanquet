@@ -177,7 +177,7 @@ const Title = styled.div`
   gap: 1rem;
 
   i {
-    color: var(--primary-color);
+    color: var(--secondary-color);
   }
 
   div {

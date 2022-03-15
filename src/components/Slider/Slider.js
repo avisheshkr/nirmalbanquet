@@ -12,7 +12,7 @@ const Slider = () => {
     const interval = setInterval(() => {
       setX(x === -(length - 1) * 100 ? 0 : x - 100);
       setActiveIndex(activeIndex === length - 1 ? 0 : activeIndex + 1);
-    }, 3000);
+    }, 7000);
 
     return () => {
       if (interval) {
@@ -25,14 +25,18 @@ const Slider = () => {
     <>
       <SlideContainer>
         {data.map((item, index) => {
-          const { imageUrl, imageUrl1 } = item;
+          const { imageUrl, imageUrl1, imageUrl2, imageUrl3 } = item;
 
           let src;
 
           if (window.innerWidth > "1024") {
             src = imageUrl;
-          } else if (window.innerWidth <= "1024") {
+          } else if (window.innerWidth <= "1024" && window.innerWidth > "768") {
             src = imageUrl1;
+          } else if (window.innerWidth <= "768" && window.innerWidth > "500") {
+            src = imageUrl2;
+          } else {
+            src = imageUrl3;
           }
 
           return (
@@ -69,7 +73,7 @@ const SlideContainer = styled.div`
   align-items: center;
   margin: 0 auto 2rem auto;
   overflow: hidden;
-  background: transparent;
+  // background: ;
 
   div {
     height: auto;
@@ -90,8 +94,16 @@ const SlideContainer = styled.div`
     height: 80rem;
   }
 
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+  }
+
   @media (max-width: 768px) {
     height: 75rem;
+  }
+
+  @media (max-width: 500px) {
+    height: 60.5rem;
   }
 `;
 
@@ -100,4 +112,16 @@ const Dots = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+
+  @media (max-width: 1024px) {
+    margin-top: -1rem;
+  }
+
+  @media (max-width: 400px) {
+    margin-top: -5rem;
+  }
+
+  @media (max-width: 350px) {
+    margin-top: -8rem;
+  }
 `;

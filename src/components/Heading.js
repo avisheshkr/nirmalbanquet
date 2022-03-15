@@ -5,7 +5,7 @@ const Heading = ({ subTitle, title, letter }) => {
   return (
     <>
       <HeadingContainer>
-        <h1>{letter}</h1>
+        {/* <h1>{letter}</h1> */}
         <h2>{title}</h2>
         <h3>{subTitle}</h3>
       </HeadingContainer>
@@ -17,7 +17,7 @@ export default Heading;
 
 const HeadingContainer = styled.div`
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 10rem;
 
   h1 {
     color: var(--primary-color);

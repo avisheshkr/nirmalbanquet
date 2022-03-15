@@ -9,7 +9,7 @@ const AboutDetails = () => {
       <Heading letter="A" title="what we do" subTitle="about us" />
       <div id="more"></div>
       <AboutExtra1
-        image="images/design.jpg"
+        image="images/weddingmgmt.jpg"
         num="01"
         title="Wedding Management"
         para="Marriages represent the blending of two unique people and 
@@ -19,7 +19,7 @@ const AboutDetails = () => {
       />
 
       <AboutExtra2
-        image="images/design.jpg"
+        image="images/outdoorcat.jpg"
         num="02"
         title="Outdoor Catering"
         para="We provide outdoor catering to extend catering service to a 
@@ -47,7 +47,7 @@ const AboutDetails = () => {
       />
 
       <AboutExtra1
-        image="images/design.jpg"
+        image="images/eventmgmt.jpg"
         num="05"
         title="Event Management"
         para="We manage all kinds of events:

@@ -13,7 +13,7 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.div`
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   padding: 3rem 0;
   margin-top: 10rem;
 
