@@ -65,14 +65,6 @@ const SingleImageContainer = styled.div`
     /* transform: ${(props) =>
       props.animate ? "translateX(0%)" : "translateX(-100%)"};*/
   }
-
-  @media (max-width: 500px) {
-    div {
-      font-size: 2.5rem;
-      top: 0.5rem;
-      right: 0.5rem;
-    }
-  }
 `;
 
 const CloseBtn = styled.div`
@@ -86,6 +78,12 @@ const CloseBtn = styled.div`
 
   &:hover {
     transform: scale(1.3);
+  }
+
+  @media (max-width: 500px) {
+    font-size: 2.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
   }
 `;
 
