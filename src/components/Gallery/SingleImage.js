@@ -13,9 +13,9 @@ const SingleImage = ({
 }) => {
   return (
     <SingleImageContainer showPhoto={showPhoto}>
-      <div>
+      <CloseBtn>
         <FaTimes onClick={viewPhoto} />
-      </div>
+      </CloseBtn>
       <Prev
         onClick={() => {
           setId(id === 1 ? num : id - 1);
@@ -56,20 +56,6 @@ const SingleImageContainer = styled.div`
   z-index: 3000;
   transition: 0.4s;
 
-  div {
-    position: absolute;
-    top: 5rem;
-    right: 5rem;
-    font-size: 3rem;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.4s;
-
-    &:hover {
-      transform: scale(1.3);
-    }
-  }
-
   img {
     width: 100%;
     height: 90vh;
@@ -89,36 +75,52 @@ const SingleImageContainer = styled.div`
   }
 `;
 
-const Prev = styled.button`
-  background: transparent;
-  font-size: 5rem;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const CloseBtn = styled.div`
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  font-size: 3rem;
   color: #fff;
+  cursor: pointer;
   transition: 0.4s;
-  margin-left: 3rem;
 
   &:hover {
-    background-color: transparent;
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 `;
 
-const Next = styled.button`
+const Prev = styled.div`
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
   background: transparent;
   font-size: 5rem;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
   color: #fff;
-  margin-right: 3rem;
+  transition: 0.4s;
+  cursor: pointer;
+  margin-left: 1rem;
 
   &:hover {
-    transform: scale(1.2);
+    background-color: transparent;
+    transform: translateY(-50%) scale(1.2);
+  }
+`;
+
+const Next = styled.div`
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  background: transparent;
+  font-size: 5rem;
+  cursor: pointer;
+  transition: 0.4s;
+  color: #fff;
+  margin-right: 1rem;
+
+  &:hover {
+    transform: translateY(-50%) scale(1.2);
     background-color: transparent;
   }
 `;
