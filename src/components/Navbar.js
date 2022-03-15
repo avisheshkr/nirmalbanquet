@@ -90,7 +90,7 @@ const MobileIcon = styled.div`
   padding-top: 3rem;
   align-self: start;
   font-size: 2.5rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   cursor: pointer;
 
   @media (max-width: 500px) {

@@ -62,7 +62,7 @@ const SideBarContainer = styled.div`
   div {
     align-self: end;
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     cursor: pointer;
   }
 
