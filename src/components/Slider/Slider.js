@@ -118,7 +118,7 @@ const Dots = styled.div`
   }
 
   @media (max-width: 400px) {
-    margin-top: -5rem;
+    margin-top: -4rem;
   }
 
   @media (max-width: 350px) {
