@@ -132,11 +132,14 @@ const SocialContainer = styled.div`
     flex-direction: row;
     order: 1;
     width: 100%;
-  }
-
-  @media (max-width: 400px) {
     a {
-      font-size: 2.5rem;
+      font-size: 4rem;
     }
   }
+
+  // @media (max-width: 400px) {
+  //   a {
+  //     font-size: 2.5rem;
+  //   }
+  // }
 `;
