@@ -87,11 +87,7 @@ const MainContainer = styled.div`
   }
 
   @media (max-width: 400px) {
-    margin-top: -17rem;
-  }
-
-  @media (max-width: 350px) {
-    margin-top: -20rem;
+    margin-top: -13rem;
   }
 `;
 
