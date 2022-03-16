@@ -22,6 +22,10 @@ const FooterContainer = styled.div`
     text-align: center;
   }
 
+  @media (max-width: 1024px) {
+    margin-top: 0;
+  }
+
   @media (max-width: 350px) {
     p {
       font-size: 1.3rem;

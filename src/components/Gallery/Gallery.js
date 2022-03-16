@@ -14,7 +14,7 @@ const Gallery = () => {
 
   const getSrc = (id) => {
     const newData = galleryData.filter((data) => data.id === id);
-    setImgSrc(newData[0].url);
+    if (newData[0]) setImgSrc(newData[0].url);
   };
 
   const viewPhoto = () => {
@@ -60,7 +60,7 @@ const Gallery = () => {
                   alt=""
                   onClick={() => {
                     getImageSrc(image.url);
-                    setId(image.id + 1);
+                    setId(image.id);
                     viewPhoto();
                   }}
                 />

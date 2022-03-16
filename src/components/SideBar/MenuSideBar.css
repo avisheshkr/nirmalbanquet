@@ -1,10 +1,10 @@
 .menu-sidebar {
   position: fixed;
   top: 15vh;
-  left: 0;
+  right: 0;
   bottom: 50%;
   transition: 0.5s;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   width: 14rem;
   height: 20rem;
   background-color: var(--primary-color);
@@ -20,6 +20,13 @@
 .active-sidebar {
   transform: translateX(0%);
   transition: 0.5s;
+}
+
+@media (max-width: 1280px) {
+  .menu-sidebar {
+    width: 5rem;
+    background-color: transparent;
+  }
 }
 
 @media (max-width: 500px) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaTimes, FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
@@ -11,27 +11,29 @@ const SingleImage = ({
   id,
   num,
 }) => {
+  const getPrevImage = () => {
+    setId(id === 1 ? num : id - 1);
+  };
+
+  const getNextImage = () => {
+    setId(id === num ? 1 : id + 1);
+  };
+
+  useEffect(() => {
+    getSrc(id);
+  });
+
   return (
     <SingleImageContainer showPhoto={showPhoto}>
       <CloseBtn>
         <FaTimes onClick={viewPhoto} />
       </CloseBtn>
-      <Prev
-        onClick={() => {
-          setId(id === 1 ? num : id - 1);
-          getSrc(id);
-        }}
-      >
+      <Prev onClick={getPrevImage}>
         <FaAngleLeft />
       </Prev>
       <img src={imgSrc} alt="" />
 
-      <Next
-        onClick={() => {
-          setId(id === num ? 1 : id + 1);
-          getSrc(id);
-        }}
-      >
+      <Next onClick={getNextImage}>
         <FaAngleRight />
       </Next>
     </SingleImageContainer>

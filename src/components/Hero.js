@@ -66,6 +66,10 @@ export default Hero;
 const HeroContainer = styled.div`
   background-color: #a8cfe8;
   display: flex;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const BlankContainer = styled.div`
@@ -84,6 +88,12 @@ const ImageContainer = styled.div`
   @media (max-width: 700px) {
     width: 85vw;
     height: 60rem;
+  }
+
+  @media (max-width: 500px) {
+    order: 2;
+    width: 100%;
+    padding: 2rem;
   }
 `;
 
@@ -116,6 +126,12 @@ const SocialContainer = styled.div`
 
   @media (max-width: 700px) {
     width: 7.5vw;
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: row;
+    order: 1;
+    width: 100%;
   }
 
   @media (max-width: 400px) {

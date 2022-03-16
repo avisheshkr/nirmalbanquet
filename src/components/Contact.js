@@ -54,52 +54,60 @@ const Contact = () => {
   return (
     <>
       <MainContainer id="contacts">
-        <img src="images/rose.png" alt="" />
+        <OverlayImg src="images/rose.png" alt="" />
         <Heading letter="C" title="contact us" subTitle="connect" />
-        <ContactContainer>
-          <p>
-            We are looking forward to organize Your wedding and to create
-            unforgettable memories of your Big Day!
-          </p>
-          {result ? (
-            <p
-              style={{
-                margin: "20px 0",
-                backgroundColor: "green",
-                color: "#fff",
-                textAlign: "center",
-              }}
-            >
-              Message sent successfully
+        <Row>
+          <ContactContainer>
+            <p>
+              We are looking forward to organize Your wedding and to create
+              unforgettable memories of your Big Day!
             </p>
-          ) : null}
-          <form ref={form} onSubmit={sendEmail}>
-            <div>
-              <input
+            {result ? (
+              <p
+                style={{
+                  margin: "20px 0",
+                  backgroundColor: "green",
+                  color: "#fff",
+                  textAlign: "center",
+                }}
+              >
+                Message sent successfully
+              </p>
+            ) : null}
+            <form ref={form} onSubmit={sendEmail}>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Full Name:"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={changeFormData}
+                />
+                <input
+                  type="text"
+                  placeholder="Email:"
+                  name="email"
+                  value={formData.email}
+                  onChange={changeFormData}
+                />
+              </div>
+              <textarea
                 type="text"
-                placeholder="Full Name:"
-                name="fullName"
-                value={formData.fullName}
+                placeholder="Message:"
+                name="message"
+                value={formData.message}
                 onChange={changeFormData}
               />
-              <input
-                type="text"
-                placeholder="Email:"
-                name="email"
-                value={formData.email}
-                onChange={changeFormData}
-              />
-            </div>
-            <textarea
-              type="text"
-              placeholder="Message:"
-              name="message"
-              value={formData.message}
-              onChange={changeFormData}
-            />
-            <button type="submit">Send</button>
-          </form>
-        </ContactContainer>
+              <button type="submit">Send</button>
+            </form>
+          </ContactContainer>
+          <Map
+            href="https://www.google.com/maps/place/Nirmal+Banquet/@27.6761103,85.3618849,17z/data=!4m5!3m4!1s0x39eb1a1bc5e5612d:0xfba2f509e7c2c769!8m2!3d27.6765478!4d85.3619189"
+            target="_blank"
+          >
+            <img src="images/map.png" alt="" />
+          </Map>
+        </Row>
       </MainContainer>
     </>
   );
@@ -109,34 +117,49 @@ export default Contact;
 
 const MainContainer = styled.div`
   position: relative;
+`;
 
-  img {
-    position: absolute;
-    top: -5rem;
-    left: 10rem;
-    max-width: 60rem;
-    z-index: -1000;
-    width: 100%;
-    height: auto;
-  }
+const OverlayImg = styled.img`
+  position: absolute;
+  top: -5rem;
+  left: 10rem;
+  max-width: 60rem;
+  z-index: -1000;
+  width: 100%;
+  height: auto;
+}
 
-  @media (max-width: 1600px) {
-    img {
-      opacity: 0.3;
-    }
+@media (max-width: 1600px) {
+    opacity: 0.3;
+}
+
+@media (max-width: 1024px) {
+    left: 0;
+}
+`;
+
+const Row = styled.div`
+  margin: 0 auto;
+  display: flex;
+  max-width: 114rem;
+  justify-content: space-between;
+  gap: 5rem;
+
+  @media (max-width: 1200px) {
+    padding: 0 10rem;
   }
 
   @media (max-width: 1024px) {
-    img {
-      // max-width: 30rem;
-      left: 0;
-    }
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
   }
 `;
 
 const ContactContainer = styled.div`
+  flex: 1;
   p {
-    text-align: center;
+    text-align: left;
     padding: 3rem 0;
     max-width: 60rem;
     margin: 0 auto;
@@ -198,6 +221,12 @@ const ContactContainer = styled.div`
     }
   }
 
+  @media (max-width: 1024px) {
+    p {
+      text-align: center;
+    }
+  }
+
   @media (max-width: 768px) {
     form {
       max-width: 100%;
@@ -225,5 +254,21 @@ const ContactContainer = styled.div`
     p {
       padding: 3rem 1rem;
     }
+  }
+`;
+
+const Map = styled.a`
+  flex: 1;
+  margin-top: 5rem;
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0;
   }
 `;

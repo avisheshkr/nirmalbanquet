@@ -7,7 +7,11 @@ import {
   FaInstagram,
   FaViber,
   FaWhatsappSquare,
+  FaHome,
+  FaPhotoVideo,
+  FaInfoCircle,
 } from "react-icons/fa";
+import { MdContactPage } from "react-icons/md";
 
 const MenuSideBar = ({ showSideBar }) => {
   return (
@@ -15,19 +19,43 @@ const MenuSideBar = ({ showSideBar }) => {
       className={showSideBar ? "menu-sidebar active-sidebar" : "menu-sidebar"}
     >
       <Menu>
-        <Link to="home" smooth={true} duration={1000}>
-          <li>home</li>
-        </Link>
-        <Link to="about" smooth={true} duration={1000}>
-          <li>about</li>
-        </Link>
-        <Link to="gallery" smooth={true} duration={1000}>
-          <li>gallery</li>
-        </Link>
-        <Link to="contacts" smooth={true} duration={1000}>
-          <li>contacts</li>
-        </Link>
-        <div>
+        <MenuLink>
+          <Link to="home" smooth={true} duration={1000}>
+            <li>home</li>
+          </Link>
+          <Link to="about" smooth={true} duration={1000}>
+            <li>about</li>
+          </Link>
+          <Link to="gallery" smooth={true} duration={1000}>
+            <li>gallery</li>
+          </Link>
+          <Link to="contacts" smooth={true} duration={1000}>
+            <li>contacts</li>
+          </Link>
+        </MenuLink>
+        <IconLink>
+          <Link to="home" smooth={true} duration={1000}>
+            <li>
+              <FaHome />
+            </li>
+          </Link>
+          <Link to="about" smooth={true} duration={1000}>
+            <li>
+              <FaInfoCircle />
+            </li>
+          </Link>
+          <Link to="gallery" smooth={true} duration={1000}>
+            <li>
+              <FaPhotoVideo />
+            </li>
+          </Link>
+          <Link to="contacts" smooth={true} duration={1000}>
+            <li>
+              <MdContactPage />
+            </li>
+          </Link>
+        </IconLink>
+        <SocialLink>
           <a
             href="https://www.facebook.com/nirmalbanquet"
             target="_blank"
@@ -68,7 +96,7 @@ const MenuSideBar = ({ showSideBar }) => {
           >
             <FaViber />
           </a>
-        </div>
+        </SocialLink>
       </Menu>
     </div>
   );
@@ -82,6 +110,10 @@ const Menu = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const MenuLink = styled.div`
+  display: block;
 
   li {
     display: flex;
@@ -99,21 +131,49 @@ const Menu = styled.ul`
     }
   }
 
-  div {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    a {
-      font-size: 4rem;
-      color: var(--secondary-color);
-      transition: 0.4s;
-      display: flex;
-      align-items: center;
+  @media (max-width: 1280px) {
+    display: none;
+  }
+`;
 
-      &:hover {
-        transform: translateY(-10%);
-      }
+const IconLink = styled.div`
+  display: none;
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    font-size: 3rem;
+    transition: 0.4s;
+    width: 5rem;
+    height: 5rem;
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  @media (max-width: 1280px) {
+    display: block;
+  }
+`;
+
+const SocialLink = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  a {
+    font-size: 4rem;
+    color: #3b5998;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      transform: translateY(-10%);
     }
   }
 `;
