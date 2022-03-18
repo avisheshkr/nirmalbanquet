@@ -136,10 +136,4 @@ const SocialContainer = styled.div`
       font-size: 4rem;
     }
   }
-
-  // @media (max-width: 400px) {
-  //   a {
-  //     font-size: 2.5rem;
-  //   }
-  // }
 `;

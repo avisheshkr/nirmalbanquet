@@ -26,7 +26,7 @@ export const galleryData = [
   },
   {
     id: 6,
-    category: "videos",
+    category: "photos",
     url: "images/gallery/6.jpg",
   },
   {
@@ -41,7 +41,7 @@ export const galleryData = [
   },
   {
     id: 9,
-    category: "videos",
+    category: "photos",
     url: "images/gallery/9.jpg",
   },
   {
@@ -51,7 +51,7 @@ export const galleryData = [
   },
   {
     id: 11,
-    category: "videos",
+    category: "photos",
     url: "images/gallery/11.jpg",
   },
   {
@@ -61,7 +61,7 @@ export const galleryData = [
   },
   {
     id: 13,
-    category: "videos",
+    category: "photos",
     url: "images/gallery/13.jpg",
   },
   {
@@ -71,12 +71,22 @@ export const galleryData = [
   },
   {
     id: 15,
-    category: "videos",
+    category: "photos",
     url: "images/gallery/15.jpg",
   },
   {
     id: 16,
     category: "photos",
     url: "images/gallery/16.jpg",
+  },
+  {
+    id: 17,
+    category: "videos",
+    url: "videos/video1.mp4",
+  },
+  {
+    id: 18,
+    category: "videos",
+    url: "videos/video2.mp4",
   },
 ];

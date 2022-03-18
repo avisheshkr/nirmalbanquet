@@ -31,6 +31,7 @@ const SingleImage = ({
       <Prev onClick={getPrevImage}>
         <FaAngleLeft />
       </Prev>
+
       <img src={imgSrc} alt="" />
 
       <Next onClick={getNextImage}>

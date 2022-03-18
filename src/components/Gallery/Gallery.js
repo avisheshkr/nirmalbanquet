@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Heading from "../Heading";
 import styled from "styled-components";
 import SingleImage from "./SingleImage";
@@ -14,7 +14,11 @@ const Gallery = () => {
 
   const getSrc = (id) => {
     const newData = galleryData.filter((data) => data.id === id);
-    if (newData[0]) setImgSrc(newData[0].url);
+
+    if (newData[0]) {
+      setImgSrc(newData[0].url);
+      console.log(newData[0].url);
+    }
   };
 
   const viewPhoto = () => {
@@ -32,12 +36,18 @@ const Gallery = () => {
     setData(updatedItems);
   };
 
+  useEffect(() => {
+    const preData = galleryData
+      .slice(0, 8)
+      .filter((data) => data.category === "photos");
+    setData(preData);
+  }, []);
+
   return (
     <>
       <div id="gallery"></div>
       <Heading letter="G" title="our gallery" subTitle="photos" />
       <FilterButtons>
-        <button onClick={() => setData(galleryData)}>All</button>
         <button onClick={() => filterItems("photos")}>Photos</button>
         <button onClick={() => filterItems("videos")}>Videos</button>
       </FilterButtons>
@@ -52,18 +62,24 @@ const Gallery = () => {
           num={num}
         />
         <Column>
-          {data.map((image, index) => {
+          {data.map((item, index) => {
             return (
               <div key={index}>
-                <img
-                  src={image.url}
-                  alt=""
-                  onClick={() => {
-                    getImageSrc(image.url);
-                    setId(image.id);
-                    viewPhoto();
-                  }}
-                />
+                {item.category === "photos" ? (
+                  <img
+                    src={item.url}
+                    alt=""
+                    onClick={() => {
+                      getImageSrc(item.url);
+                      setId(item.id);
+                      viewPhoto();
+                    }}
+                  />
+                ) : (
+                  <video controls>
+                    <source src={item.url} type="video/mp4" />
+                  </video>
+                )}
               </div>
             );
           })}
@@ -115,7 +131,8 @@ const Column = styled.div`
     width: 25rem;
     height: 20rem;
 
-    img {
+    img,
+    video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -149,28 +166,4 @@ const Column = styled.div`
       height: 20rem;
     }
   }
-
-  // @media (max-width: 500px) {
-  //   column-count: 1;
-  //   column-width: 100%;
-  // }
-
-  // flex: 25%;
-  // max-width: 25%;
-  // padding: 0 0.5rem;
-
-  // img {
-  //   margin-top: 1rem;
-  //   vertical-align: middle;
-  // }
-
-  // @media (max-width: 1024px) {
-  //   flex: 50%;
-  //   max-width: 50%;
-  // }
-
-  // @media (max-width: 500px) {
-  //   flex: 100%;
-  //   max-width: 100%;
-  // }
 `;
