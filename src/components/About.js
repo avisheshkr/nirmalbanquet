@@ -19,9 +19,9 @@ const About = () => {
         <AboutContainer>
           <TextContainer>
             <h2>welcome to</h2>
-            <h3>Nirmal Banquet Site</h3>
+            <h3>Nirmal Banquet</h3>
             <p>
-              We are located at Bhaktapur, Lokanthali-02. Nirmal Banquet is one
+              We are located at Bhaktapur, Lukunthali-01. Nirmal Banquet is one
               of the most renowned venues in the hospitality business and has
               been witness to countless wedding ceremonies.
               <br />

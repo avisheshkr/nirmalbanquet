@@ -55,7 +55,7 @@ const Navbar = () => {
             </i>
             <div>
               <p>Phone</p>
-              <p>9841650484</p>
+              <p>9841926838</p>
             </div>
           </Title>
         </AddressContainer>
