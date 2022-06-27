@@ -8,13 +8,6 @@ const About = () => {
   return (
     <>
       <MainContainer id="about">
-        {/* <ParallaxProvider>
-          <Parallax
-            className="custom-class"
-            y={[-20, 20]}
-            tagOuter="figure"
-          ></Parallax>
-        </ParallaxProvider> */}
         <Image src="images/rose.png" alt="" />
         <AboutContainer>
           <TextContainer>
@@ -38,8 +31,6 @@ const About = () => {
             <img src="images/about.jpg" alt="" />
           </ImageContainer>
         </AboutContainer>
-
-        {/* <BackgroundContainer></BackgroundContainer> */}
       </MainContainer>
 
       <AboutDetails />

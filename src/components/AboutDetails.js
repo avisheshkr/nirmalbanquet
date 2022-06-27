@@ -29,7 +29,7 @@ const AboutDetails = () => {
       />
 
       <AboutExtra1
-        image="images/design.jpg"
+        image="images/gift.jpg"
         num="03"
         title="Wedding Gift Package"
         para="The purpose of giving wedding gifts to wedding guests is to 
