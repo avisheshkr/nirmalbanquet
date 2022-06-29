@@ -10,6 +10,8 @@ const Contact = () => {
     message: "",
   });
   const [result, setResult] = useState(false);
+  const [isErr, setIsErr] = useState(false);
+  const [message, setMessage] = useState("");
   const form = useRef();
 
   const changeFormData = (e) => {
@@ -22,6 +24,13 @@ const Contact = () => {
     e.preventDefault();
     const { fullName, email, message } = formData;
     console.log({ fullName, email, message });
+    if (!fullName || !email || !message) {
+      setIsErr(true);
+      setMessage("Please fill all the fields!!!!!");
+    } else {
+      setIsErr(false);
+      setMessage("Message sent successfully");
+    }
     setFormData({ fullName: "", email: "", message: "" });
   };
 
@@ -57,23 +66,23 @@ const Contact = () => {
         <OverlayImg src="images/rose.png" alt="" />
         <Heading letter="C" title="contact us" subTitle="connect" />
         <Row>
-          <ContactContainer>
+          <ContactContainer isErr={isErr}>
             <p>
               We are looking forward to organize Your wedding and to create
               unforgettable memories of your Big Day!
             </p>
-            {result ? (
+            {result && (
               <p
                 style={{
                   margin: "20px 0",
-                  backgroundColor: "green",
                   color: "#fff",
                   textAlign: "center",
                 }}
+                className="message"
               >
-                Message sent successfully
+                {message}
               </p>
-            ) : null}
+            )}
             <form ref={form} onSubmit={sendEmail}>
               <div>
                 <input
@@ -158,6 +167,11 @@ const Row = styled.div`
 
 const ContactContainer = styled.div`
   flex: 1;
+
+  .message {
+    background-color: ${(props) => (props.isErr ? "#C12026" : "green")};
+  }
+
   p {
     text-align: left;
     padding: 3rem 0;
