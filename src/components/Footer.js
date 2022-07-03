@@ -2,10 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer = () => {
+  let date = new Date().getFullYear();
+
   return (
     <>
       <FooterContainer>
-        <p>Nirmal Banquet &copy; All rights reserved</p>
+        <p>
+          &copy; Nirmal Banquet {date} &#8226; All rights reserved &#8226;
+          Designed By{" "}
+          <span>
+            <a
+              href="https://machhu.netlify.app/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Machhu Infosys
+            </a>
+          </span>
+        </p>
       </FooterContainer>
     </>
   );
@@ -20,6 +34,16 @@ const FooterContainer = styled.div`
   p {
     color: #fff;
     text-align: center;
+
+    span {
+      text-decoration: underline;
+      font-weight: bold;
+      font-size: 2rem;
+
+      a {
+        color: yellow;
+      }
+    }
   }
 
   @media (max-width: 1024px) {
